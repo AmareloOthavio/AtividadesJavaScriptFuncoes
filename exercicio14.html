@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function bhaskara(a, b, c) {
+            
+            let delta = b**2 - a*c*4
+            b = b* -1
+            let raizDelta = delta**0.5
+
+            let calculo1 = b + raizDelta
+            let calculo2 = b - raizDelta
+            
+            calculo1 = calculo1 / (a*2)
+            calculo2 = calculo2 / (a*2)
+
+            return [calculo1,calculo2]
+        }
+        
+        a = parseFloat(prompt('Insira o valor "a" da fórmula de Bhaskara'))
+        b = parseFloat(prompt('Insira o valor "b" da fórmula de Bhaskara'))
+        c = parseFloat(prompt('Insira o valor "c" da fórmula de Bhaskara'))
+
+        alert("Resultado: (x1 e x2 respectivamente) "+bhaskara(a,b,c)+'\n se você está vendo "NaN" quer dizer que x1 e x2 não são números, assim a equação não possui raízes reais.')
+    </script>
+</body>
+</html>

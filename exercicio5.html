@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function calculadoraSimples(v1,v2,op) {
+            if (op == "+") {
+                return v1 + v2
+            }
+            else if (op == "-") {
+                return v1 - v2
+            }
+            else if (op == "/") {
+                return v1 / v2
+            }
+            else if (op == "*") {
+                return v1 * v2
+            }
+            else {
+                return "Erro, dígito operador não reconhecido"
+            }
+        }
+
+        var num1 = parseFloat(prompt("Insira o primeiro número para um cálculo matemático"))
+        var operacao = prompt("Digite a operação (possíveis dígitos: *, -, +, /)")
+        var num2 = parseFloat(prompt("Insira o segundo valor"))
+
+        alert(num1 +" " +operacao+" "+num2+" " +"="+" "+ calculadoraSimples(num1,num2,operacao))
+    </script>
+</body>
+</html>

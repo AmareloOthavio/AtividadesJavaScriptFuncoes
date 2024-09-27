@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function pitagoras(cateto1, cateto2) {
+            cateto1 *= cateto1
+            cateto2 *= cateto2
+            let soma = cateto1 + cateto2
+
+            return soma**0.5
+        }
+        
+        var cat1 = parseFloat(prompt("Calculadora de hipotenusa de triângulos retângulos \nDigite o valor do cateto1"))
+        var cat2 = parseFloat(prompt("Digite o valor do cateto2"))
+
+        alert("Hipotenusa = "+pitagoras(cat1,cat2))
+    </script>
+</body>
+</html>

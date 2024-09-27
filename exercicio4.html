@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function calcularMedia(n1,n2,n3,letra) {
+            if (letra == "A") {
+                let soma = 0
+                soma = n1+n2+n3
+                return soma/3
+            }
+            else if (letra == "P") {
+                let soma = 0
+                soma = n1 * 5 + n2 * 3 + n3 * 2
+                return soma/10
+            }
+            else {
+                return 'Erro, a letra precisa ser "A" ou "B"'
+            }
+        }
+
+        tipo = prompt('Gostaria de uma média aritmética ou ponderada?\n Digite "A" ou "P" para decidir')
+        nota1 = parseFloat(prompt("Digite a primeira nota"))
+        nota2 = parseFloat(prompt("Digite a segunda nota"))
+        nota3 = parseFloat(prompt("Digite a terceira nota"))
+
+        alert("Resultado: "+calcularMedia(nota1,nota2,nota3,tipo))
+    </script>
+</body>
+</html>

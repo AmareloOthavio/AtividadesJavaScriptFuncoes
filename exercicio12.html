@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function escreverData(data) {
+            let dia = data.slice(0,2)
+            let mes = data.slice(3,5)
+            let ano = data.slice(6)
+            let mesPorExtenso = ""
+
+            if (parseInt(mes) == 1) {
+                mesPorExtenso = "Janeiro"
+            }
+            else if (parseInt(mes) == 2) {
+                mesPorExtenso = "Fevereiro"
+            }
+            else if (parseInt(mes) == 3) {
+                mesPorExtenso = "Março"
+            }
+            else if (parseInt(mes) == 4) {
+                mesPorExtenso = "Abril"
+            }
+            else if (parseInt(mes) == 5) {
+                mesPorExtenso = "Maio"
+            }
+            else if (parseInt(mes) == 6) {
+                mesPorExtenso = "Junho"
+            }
+            else if (parseInt(mes) == 7) {
+                mesPorExtenso = "Julho"
+            }
+            else if (parseInt(mes) == 8) {
+                mesPorExtenso = "Agosto"
+            }
+            else if (parseInt(mes) == 9) {
+                mesPorExtenso = "Setembro"
+            }
+            else if (parseInt(mes) == 10) {
+                mesPorExtenso = "Outubro"
+            }
+            else if (parseInt(mes) == 11) {
+                mesPorExtenso = "Novembro"
+            }
+            else if (parseInt(mes) == 12) {
+                mesPorExtenso = "Dezembro"
+            }
+            else {
+                return null
+            }
+
+            return dia+" de "+mesPorExtenso+" de "+ano
+        }
+        
+        dataTeste = prompt("Insira uma data no formato DD/MM/AAAA")
+
+        alert(escreverData(dataTeste))
+    </script>
+</body>
+</html>
