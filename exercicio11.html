@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function gerarNumeroAleatorio(min, max) {
+            // Encontrei essa lógica por meio de pesquisas
+            return parseInt(Math.random() * (max - min) + min)
+        }
+
+        alert("Bem vindo ao jogo de Craps!")
+        var primeiraRodada = true
+        
+        while(true) {
+            let numeroTirado = gerarNumeroAleatorio(2,13)
+            alert("Você joga o dado e tira um "+numeroTirado)
+            if ((numeroTirado == 7 || numeroTirado == 11) && primeiraRodada == true) {
+                alert("Parabéns, você tirou "+numeroTirado+", um natural!")
+                break
+            }
+            else if ((numeroTirado == 2 || numeroTirado == 3 || numeroTirado == 12) && primeiraRodada == true) {
+                alert("Essa não! Você tirou "+numeroTirado+" na primeira jogada, um craps! Você perdeu")
+                break
+            }
+            else {
+                if (primeiraRodada == true) {
+                    alert(numeroTirado+" agora é o seu ponto, tente tirá-lo novamente")
+                    primeiraRodada = false
+                    var ponto = numeroTirado
+                    continue
+                }
+                else {
+                    if (numeroTirado == 7) {
+                        alert("Essa não! Você tirou 7 antes do ponto e perdeu!")
+                        break
+                    }
+                    if (numeroTirado == ponto) {
+                        alert("Você alcançou seu ponto tirando "+numeroTirado+" parabéns!")
+                        break
+                    }
+                }
+            }
+        }
+        
+    </script>
+</body>
+</html>
