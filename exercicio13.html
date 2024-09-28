@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        function embaralhar(palavra) {
+            let letrasSeparadas = palavra.split('')
+            for (pos in letrasSeparadas) {
+                if (letrasSeparadas[pos] === "  " || letrasSeparadas[pos] == " ") {
+                    letrasSeparadas.splice(pos, 1)
+                    continue
+                }
+                if (Math.random() <= 0.5) {
+                    // Avançar uma posição no array
+                    let letraAtual = letrasSeparadas[pos]
+                    letrasSeparadas.splice(pos, 1)
+                    letrasSeparadas.splice(pos + 1, 0, letraAtual)
+
+                    if (Math.random() <= 0.25) {
+                        letrasSeparadas[pos] = letrasSeparadas[pos].toUpperCase()
+                    }
+                }
+                else if (Math.random() > 0.5) {
+                    // Voltar uma posição no array
+                    let letraAtual = letrasSeparadas[pos]
+                    letrasSeparadas.splice(pos, 1)
+                    letrasSeparadas.splice(pos - 1, 0, letraAtual)
+
+                    if (Math.random() >= 0.75) {
+                        letrasSeparadas[pos] = letrasSeparadas[pos].toLowerCase()
+                    }
+                }
+            }
+            let palavraNova = letrasSeparadas.join('')
+            return palavraNova
+        }
+
+        var palavraTeste = prompt("Digite uma palavra para ver uma coisa legal")
+
+        alert("Olha o que eu fiz com sua palavra: "+embaralhar(palavraTeste))
+    </script>
+</body>
+</html>
